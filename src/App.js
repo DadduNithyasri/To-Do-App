@@ -40,16 +40,12 @@ function App() {
   const completedTasks = tasks.filter((t) => t.completed);
 
   const renderTask = (t, index) => (
-    <div className="task" key={index}>
+    <div className={`task ${t.completed ? "completed" : ""}`} key={index}>
       <span>{t.text}</span>
-      <button
-        className="complete-btn"
-        onClick={() => toggleComplete(tasks.indexOf(t))}
-        title={t.completed ? "Mark Active" : "Mark Complete"}
-      >
-        <FiCheckCircle />
-      </button>
       <div className="more-icons">
+        <button onClick={() => toggleComplete(tasks.indexOf(t))} title={t.completed ? "Mark Active" : "Mark Complete"}>
+          <FiCheckCircle />
+        </button>
         {!t.completed && (
           <button onClick={() => editTask(tasks.indexOf(t))} title="Edit Task">
             <FiEdit2 />
@@ -63,6 +59,7 @@ function App() {
   );
 
   return (
+    <>
     <div className="app">
       <h1>To-Do App</h1>
 
@@ -76,34 +73,37 @@ function App() {
         />
         <div className="add-wrapper">
           <button className="add-btn" onClick={addTask}>
-            +
+            {editIndex !== null ? "Update" : "+"}
           </button>
-          <span className="add-tooltip">{editIndex !== null ? "Edit Task" : "Add Task"}</span>
+          <span className="add-tooltip">{editIndex !== null ? "Update Task" : "Add Task"}</span>
         </div>
       </div>
 
       <div className="lists">
-        <div className="task-box active">
-          <h2><FiClipboard className="box-icon" /> Active Tasks</h2>
+        <div className="task-box">
+          <h2><FiClipboard /> Active Tasks</h2>
           {activeTasks.length === 0 ? (
             <p className="empty">No active tasks</p>
           ) : (
-            activeTasks.map((t, index) => renderTask(t, index))
+            activeTasks.map(renderTask)
           )}
         </div>
 
-        <div className="task-box completed">
-          <h2><FiCheckSquare className="box-icon" /> Completed Tasks</h2>
+        <div className="task-box">
+          <h2><FiCheckSquare /> Completed Tasks</h2>
           {completedTasks.length === 0 ? (
             <p className="empty">No completed tasks</p>
           ) : (
-            completedTasks.map((t, index) => renderTask(t, index))
+            completedTasks.map(renderTask)
           )}
         </div>
       </div>
     </div>
+       <footer className="footer">
+      <p>Developed By: 24255A0511, 23251A0597, 23251A05A6, 23251A0595</p>
+    </footer>
+</>
   );
 }
-
 export default App;
 
