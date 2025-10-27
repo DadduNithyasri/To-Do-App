@@ -34,14 +34,10 @@ This project demonstrates:
 
 > Add your screenshots inside a folder named **screenshots** and replace the image links.
 
-### 1. Home Page
-![Home](./screenshots/home.png)
 
-### 2. Task Added
-![Add Task](./screenshots/add_task.png)
 
 ### 3. Task Completed
-![Task Completed](./screenshots/completed.png)
+![Task Completed](.C:\Users\HP\OneDrive\Desktop\To-do_List.jpg)
 
 ---
 
@@ -56,3 +52,16 @@ npm start
 
 # Step 3: Open in browser (if not auto-opened)
 http://localhost:3000/
+---
+
+## 👩‍💻 Developed By  
+**FSD Project Team – CSE-B**
+
+| Name | Roll Number |
+|------|-------------|
+| Member 1 | 24255A0511 |
+| Member 2 | 23251A0597 |
+| Member 3 | 23251A05A6 |
+| Member 4 | 23251A0595 |
+
+---
